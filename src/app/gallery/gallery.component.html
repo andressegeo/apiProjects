@@ -1,0 +1,26 @@
+<div class="container">
+<div class="panel panel-primary">
+  <div class="panel-heading">GALLERY COMPONENT</div>
+  <div class="panel-body">
+    <h3>Gallery</h3>
+    <form #form = "ngForm" (ngSubmit) ="onSearch(form.value)">
+      <div class="form-group">
+        <label>Key: </label>
+        <input type="text" name = "motcle" ngModel required/>
+        <button type="submit" class = "btn btn-primary"  >rechercher</button>
+      </div>
+    </form>
+    <br>
+    <div>
+    <div *ngFor = "let img of pagePhotos?.hits" class="col-md-3">
+      <div class="panel panel-primary cadre">
+          <div class="panel-heading">{{img.tags}}</div>
+          <div class="panel-body">
+            <img src="{{img.previewURL}}">
+          </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</div>
